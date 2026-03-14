@@ -4,37 +4,20 @@
 <title>Untuk Kamu</title>
 
 <style>
-
 body{
-background: linear-gradient(120deg,#ff9a9e,#9e4ba3);
-text-align:center;
-font-family: Arial;
+background: linear-gradient(120deg,#ff9a9e,#fad0c4);
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+font-family:Arial;
 color:white;
-overflow:hidden;
-}
-
-h1{
-margin-top:40px;
-font-size:45px;
-}
-
-img{
-width:250px;
-border-radius:20px;
-margin-top:20px;
-box-shadow:0 0 20px white;
-}
-
-#pesan{
-margin-top:30px;
-font-size:22px;
-opacity:0;
-transition:1s;
+text-align:center;
 }
 
 button{
-margin-top:30px;
-padding:15px 30px;
+padding:12px 25px;
 font-size:18px;
 border:none;
 border-radius:10px;
@@ -43,60 +26,39 @@ color:#ff4d6d;
 cursor:pointer;
 }
 
-.heart{
-position:fixed;
-top:-10px;
-font-size:25px;
-animation:jatuh 6s linear infinite;
+img{
+margin-top:20px;
+width:200px;
+border-radius:15px;
+display:none;
 }
-
-@keyframes jatuh{
-0%{transform:translateY(-10px);}
-100%{transform:translateY(100vh);}
-}
-
 </style>
-
 </head>
 
 <body>
 
 <h1>💗 Hai Cantik 💗</h1>
 
-<img src="c:\Users\Adrian\Downloads\muka ryan.jpeg">
-
-<br>
-
 <button onclick="mulai()">PENCET YUKS</button>
 
-<div id="pesan">
-MAAFFIN AKU YA UDAH NGOMONG YANG GA PANTES KE KAMU DAN JUJUR AKU GA ADA NIATAN SAMA SEKALI UNTUK NGATAIN KAMU KAYAK GITU, AKU NGAKU SALAH DAN MINTA MAAF BANGET KE KAMU KARENA UDAH BUAT HATI KAMU SAKIT, I LOVE U SAYANG❤️.
-</div>
+<p id="teks" style="display:none">
+Maafin aku ya udah ngomong yang ga pantes ke kamu.
+Aku bener-bener minta maaf dan ga ada niat nyakitin kamu.
+I love you ❤️
+</p>
 
-<audio id="musik" loop>
-<source src="c:\Users\Adrian\Downloads\LAGU SEDIH.mp4" type="audio/mpeg">
+<img src="foto.jpg">
+
+<audio id="musik">
+<source src="lagu.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-
 function mulai(){
+document.getElementById("teks").style.display="block";
+document.querySelector("img").style.display="block";
 document.getElementById("musik").play();
-document.getElementById("pesan").style.opacity="1";
 }
-
-setInterval(function(){
-let heart=document.createElement("div");
-heart.innerHTML="❤️🥹";
-heart.className="heart";
-heart.style.left=Math.random()*100+"vw";
-document.body.appendChild(heart);
-
-setTimeout(function(){
-heart.remove();
-},6000);
-
-},300);
-
 </script>
 
 </body>
